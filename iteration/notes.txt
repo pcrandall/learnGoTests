@@ -1,0 +1,29 @@
+to write tests in go add <filename>_test.go gode to package
+to run tests "go test" from command line.
+
+Benchmarking code has to go in the <filename>_test.go file
+
+TO RUN BENCHMARK "GO TEST -BENCH=."
+by default benchmarks are ran sequentually
+
+Form
+  func BenchmarkXxx(*testing.B)
+
+func BenchmarkRepeat(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        Repeat("a")
+    }
+}
+
+EXAMPLES
+functions that reside in the <filename>_test.go file
+take no arguements and begind with the word Example instead of Test
+
+when running test, compares output to the output comment in the Example function
+
+  func ExampleReverse() {
+      fmt.Println(stringutil.Reverse("hello"))
+      // Output: golly
+  }
+
+niladic means a function with no arguements
